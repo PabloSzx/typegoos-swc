@@ -27,6 +27,11 @@ enum TestEnum {
   b = "b",
 }
 
+export class InternalObj {
+  @prop()
+  a: number;
+}
+
 export class TestEntity {
   readonly _id: ObjectId;
 
@@ -35,9 +40,12 @@ export class TestEntity {
 
   @prop({
     enum: TestEnum,
-    type: TestEnum,
+    // type: String,
   })
   b: TestEnum;
+
+  @prop()
+  c: InternalObj;
 }
 
 const TestModel = getModelForClass(TestEntity);
@@ -45,7 +53,13 @@ const TestModel = getModelForClass(TestEntity);
 TestModel.create({
   a: "asd",
   b: TestEnum.a,
-}).then((created) => {
-  console.log(created);
-  process.exit(0);
-});
+  c: {
+    a: 123,
+  },
+})
+  .then((created) => {
+    console.log(created);
+  })
+  .finally(() => {
+    process.exit(0);
+  });

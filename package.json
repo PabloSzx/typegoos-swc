@@ -1,0 +1,34 @@
+{
+  "name": "typegoose-swc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "node -r @swc-node/register index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PabloSzx/typegoose-swc.git"
+  },
+  "author": "PabloSz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PabloSzx/typegoose-swc/issues"
+  },
+  "homepage": "https://github.com/PabloSzx/typegoose-swc#readme",
+  "dependencies": {
+    "@swc-node/register": "^0.4.9",
+    "@swc/cli": "^0.1.26",
+    "@swc/core": "^1.2.24",
+    "@typegoose/typegoose": "^7.3.5",
+    "mongodb": "^3.6.1",
+    "mongoose": "^5.10.4",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.5.27",
+    "@types/mongoose": "^5.7.36"
+  }
+}
